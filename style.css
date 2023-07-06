@@ -1,4 +1,18 @@
 * {
-    margin: 0;
-    padding: 0;
+    background-color: #969A97;
+    color: ;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    background-image: url(./book-wall-1151405_1280.jpg);
+    padding: 80px;
+    font-size: 45px;
+    border: 5px ridge #E5ECE9;
+    color: #3c3f3e;
+}
+
+h1 {
+    background: none;
 }
