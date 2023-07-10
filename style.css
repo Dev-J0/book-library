@@ -1,18 +1,48 @@
 * {
     background-color: #969A97;
-    color: ;
+    color: #fff; /* Set the color to white for better visibility */
 }
 
 .titleContainer {
-    display: flex;
-    justify-content: center;
+    
+   
     background-image: url(./book-wall-1151405_1280.jpg);
-    padding: 80px;
-    font-size: 45px;
-    border: 5px ridge #E5ECE9;
-    color: #3c3f3e;
+    padding: 5px;
+    font-size: 35px;
+    border: 1px ridge #E5ECE9;
+    color: #0c0c0c;
+    opacity: 0.5;
+    height: 150px;
 }
 
-h1 {
-    background: none;
+
+
+
+
+#mainContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-left: 50px;
+    justify-content: center;
+    height: 200px;
+    
+    font-size: 25px;
+}
+
+.listContainer {
+   
+    
+}
+
+.bookContainer {
+   
+    display: flex;
+    flex-direction: row;
+}
+
+.bookListContainer {
+    margin-left: 45%;
+    
 }
