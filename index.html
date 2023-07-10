@@ -1,20 +1,18 @@
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library of Books</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<div>
+<body>
     <div class="titleContainer">
-    </div>
-    <br>
-    <div class="bookListContainer">
         <h1>Book List</h1>
     </div>
 
-<div id="mainContainer">
-            <div class="bookContainer">
+    <div id="mainContainer">
+        <div class="bookContainer">
             <form id="bookForm">
                 <label for="title">Title:</label>
                 <input type="text" id="title" required><br>
@@ -24,22 +22,18 @@
                 <input type="number" id="pages" required><br>
                 <button type="submit">Add Book</button>
             </form>
-            </div>
-            <div class="listContainer">
-                <ul id="bookList"></ul>
-                <button id="resetButton">Reset</button>
-           </div>
-</div>
+        </div>
+        <div class="listContainer">
+            <ul id="bookList"></ul>
+            <button id="resetButton" class="hidden">Reset</button>
+        </div>
+    </div>
 
-
-
-
-  <script>
-        // Function to handle form submission
+    <script>
+       
         function handleFormSubmit(event) {
             event.preventDefault();
 
-            // Get input values
             const titleInput = document.getElementById("title");
             const authorInput = document.getElementById("author");
             const pagesInput = document.getElementById("pages");
@@ -55,19 +49,18 @@
                 pages: pages
             };
 
-            // Retrieve existing books from local storage or initialize empty array
+            
             const books = JSON.parse(localStorage.getItem("books")) || [];
-
-            // Add new book to the array
+           
             books.push(book);
+            
 
-            // Store updated book list in local storage
             localStorage.setItem("books", JSON.stringify(books));
 
-            // Display book details
+           
             displayBookDetails();
 
-            // Reset form inputs
+          
             titleInput.value = "";
             authorInput.value = "";
             pagesInput.value = "";
@@ -87,23 +80,28 @@
                 listItem.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}`;
                 bookList.appendChild(listItem);
             });
+
+            // Show or hide reset button based on the number of books
+            const resetButton = document.getElementById("resetButton");
+            if (books.length > 0) {
+                resetButton.classList.remove("hidden");
+            } else {
+                resetButton.classList.add("hidden");
+            }
         }
 
-        // Function to reset book list and local storage
         function resetBooks() {
             localStorage.removeItem("books");
             displayBookDetails();
         }
 
-        // Add event listener to form submission
         const bookForm = document.getElementById("bookForm");
         bookForm.addEventListener("submit", handleFormSubmit);
 
-        // Add event listener to reset button
+  
         const resetButton = document.getElementById("resetButton");
         resetButton.addEventListener("click", resetBooks);
 
-        // Display initial book details on page load
         displayBookDetails();
     </script>
 </body>

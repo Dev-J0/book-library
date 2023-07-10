@@ -12,11 +12,19 @@
     border: 1px ridge #E5ECE9;
     color: #0c0c0c;
     opacity: 0.5;
-    height: 150px;
+    height: 250px;
 }
 
 
-
+h1 {
+   position: fixed;
+   margin-left: 20px;
+   margin-top: 210px;
+   background: none;
+   color: rgb(250, 250, 245);
+   font-size: 45px;
+   
+}
 
 
 #mainContainer {
@@ -45,4 +53,8 @@
 .bookListContainer {
     margin-left: 45%;
     
+}
+
+.hidden {
+    display: none;
 }
