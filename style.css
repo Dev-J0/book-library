@@ -1,6 +1,47 @@
 * {
-    background-color: #969A97;
+
+    
     color: #fff; /* Set the color to white for better visibility */
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #0c0c0c;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+
+}
+
+#ul li {
+    overflow-wrap: break-word;
+    }   
+
+body {
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    overflow: scroll;
 }
 
 .titleContainer {
@@ -12,14 +53,22 @@
     border: 1px ridge #e5ece99c;
     color: #0c0c0c;
     opacity: 0.5;
-    height: 250px;
+    height: 100%;
+    width: 20%;
+    margin-right: 50px;
 }
 
+.page-Container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
 
 h1 {
    position: fixed;
-   margin-left: 20px;
-   margin-top: 210px;
+
    background: none;
    color: rgb(250, 250, 245);
    font-size: 45px;
@@ -32,6 +81,7 @@ h2 {
     font-size: 35px;;
     font-family: Georgia, 'Times New Roman', Times, serif;
    text-shadow: rgb(255, 255, 253) 1px 0 10px;
+    margin-bottom: 20px;
 }
 
 h1:hover {
@@ -39,29 +89,30 @@ h1:hover {
     text-decoration: underline overline #8d2d1d;
 }
 
+ li::marker {
+    content: " ¤ ";
+   
+ }
+
 #mainContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: baseline;
-    margin-left: 50px;
-    margin-top: 80px;
-    justify-content: center;
-    height: 200px;
+    align-items: center;
+    
+    justify-content: space-around;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 25px;
-    
+    width: 100%;
 }
 
-.listContainer {
-   
-    
-}
+
 
 .bookContainer {
-   
+   background: transparent;
     display: flex;
     flex-direction: row;
+    
 }
 
 .bookListContainer {
@@ -95,8 +146,8 @@ button {
       position: relative;
       text-decoration: none;
       transition: all 250ms;
-      user-select: none;
       -webkit-user-select: none;
+       user-select: none;
       touch-action: manipulation;
       vertical-align: baseline;
       width: auto;
@@ -124,4 +175,32 @@ button {
     #resetButton {
         margin-left: 15px;
         margin-bottom: 50px;
+        position:static;
+        
+
+    }
+
+    input {
+        outline: none;
+        color: rgb(202, 209, 209);
+        font-weight: 600;
+        background: rgb(53, 52, 52);
+        border-inline: none;
+        margin-bottom: 10px;
+        height: 40px;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+ 
+
+    #bookForm {
+        margin: 40px;
+        font-size: 18px;
+        gap: 40px;
+    }
+
+    #bookList {
+        font-size: 18px;
+        word-spacing: 9px;
     }
